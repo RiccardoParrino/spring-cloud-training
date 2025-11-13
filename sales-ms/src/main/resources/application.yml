@@ -1,0 +1,6 @@
+spring:
+    application:
+        name: sales-ms
+
+server:
+    port: 8081
