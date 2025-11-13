@@ -7,9 +7,9 @@ spring:
                 binder:
                     brokers: localhost:9092
             bindings:
-                salesProductResponse-out-0:
-                    destination: sales-products-events
-                    content-type: application/json
+                # salesProductResponse-out-0:
+                #     destination: sales-products-events
+                #     content-type: application/json
                 salesProductRequest-in-0:
                     destination: sales-products-events
                     group: sales-products-service-group
