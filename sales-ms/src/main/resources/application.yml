@@ -2,6 +2,8 @@ spring:
     application:
         name: sales-ms
     cloud:
+        function:
+            definition: salesCustomerResponse;salesProductResponse
         stream:
             kafka:
                 binder:
@@ -12,12 +14,12 @@ spring:
                     content-type: application/json
                 salesProductResponse-in-0:
                     destination: sales-products-response-events
-                    group: sales-products-service-group
+                    group: sales-products-response-group
                 salesCustomerRequest-out-0:
                     destination: sales-customers-events
                     content-type: application/json
                 salesCustomerResponse-in-0:
                     destination: sales-customers-response-events
-                    group: sales-customers-service-group
+                    group: sales-customers-response-group
 server:
     port: 8081
