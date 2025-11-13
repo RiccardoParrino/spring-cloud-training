@@ -6,6 +6,13 @@ spring:
         kafka:
           binder:
             brokers: localhost:9092
+          bindings:
+            salesCustomerResponse-out-0:
+              destination: sales-customers-events
+              content-type: application/json
+            salesCustomerRequest-in-0:
+              destination: sales-customers-events
+              group: sales-customers-service-group
 
 server:
   port: 8083
