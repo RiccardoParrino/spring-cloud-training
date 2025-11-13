@@ -1,6 +1,11 @@
 spring:
     application:
         name: products-ms
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost:9092
 
 server:
     port: 8082
