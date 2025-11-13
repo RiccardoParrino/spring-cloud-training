@@ -16,8 +16,8 @@ spring:
                 salesCustomerRequest-out-0:
                     destination: sales-customers-events
                     content-type: application/json
-                # salesCustomerResponse-in-1:
-                #     destination: sales-customers-events
-                #     group: sales-customers-service-group
+                salesCustomerResponse-in-0:
+                    destination: sales-customers-response-events
+                    group: sales-customers-service-group
 server:
     port: 8081

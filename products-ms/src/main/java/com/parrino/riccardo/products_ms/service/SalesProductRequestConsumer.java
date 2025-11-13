@@ -23,8 +23,9 @@ public class SalesProductRequestConsumer {
             System.out.println("id: " + event.id());
             System.out.println("productId: " + event.productId());
 
-            streamBridge.send("salesProductResponse-out-0",
+            boolean success = streamBridge.send("salesProductResponse-out-0",
                     new SalesProductResponse(event.correlationId(), event.productId(), true));
+            System.out.println("Successfully sent salesProductResponse: " + success);
         };
     }
 
