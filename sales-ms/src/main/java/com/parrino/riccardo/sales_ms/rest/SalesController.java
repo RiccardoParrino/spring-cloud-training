@@ -28,17 +28,17 @@ public class SalesController {
     }
 
     @GetMapping("{salesCode}")
-    public Mono<String> findSalesById(@PathVariable Long salesCode) {
+    public Mono<String> findSalesByCode(@PathVariable Long salesCode) {
         return Mono.just(new String("sales-ms findSalesById endpoint"));
     }
 
     @PatchMapping("{salesCode}")
-    public Mono<String> updateSalesById(@PathVariable UpdateSalesDTO updateSalesDTO) {
+    public Mono<String> updateSalesByCode(@PathVariable Long salesCode, UpdateSalesDTO updateSalesDTO) {
         return Mono.just(new String("sales-ms updateSalesById endpoint"));
     }
 
     @DeleteMapping("{salesCode}")
-    public Mono<String> deleteSalesById(@PathVariable Long salesCode) {
+    public Mono<String> deleteSalesByCode(@PathVariable Long salesCode) {
         return Mono.just(new String("sales-ms deleteSalesById endpoint"));
     }
 

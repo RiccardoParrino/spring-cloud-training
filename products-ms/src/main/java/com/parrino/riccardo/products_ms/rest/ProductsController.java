@@ -34,7 +34,7 @@ public class ProductsController {
     }
 
     @PatchMapping("{code}")
-    public Mono<String> updateProductByCode(@RequestBody UpdateProductDTO product) {
+    public Mono<String> updateProductByCode(@PathVariable Long code, @RequestBody UpdateProductDTO product) {
         return Mono.just(new String("products-ms updateProductByCode endpoint"));
     }
 
