@@ -13,6 +13,7 @@ public class SalesCustomerRequestConsumer {
     @Bean
     public Consumer<SalesConsumerRequest> salesCustomerRequest() {
         return (event) -> {
+            System.out.println("correlationId: " + event.correlationId());
             System.out.println("id: " + event.id());
             System.out.println("customerId: " + event.customerId());
         };

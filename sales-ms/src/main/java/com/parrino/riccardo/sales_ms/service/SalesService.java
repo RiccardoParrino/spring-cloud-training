@@ -15,16 +15,16 @@ public class SalesService {
     @Autowired
     private SalesCustomerRequestProducer salesCustomerRequestProducer;
 
-    public void sendProductRequest(Long id, Long productId) {
+    public void sendProductRequest(Long correlationId, Long id, Long productId) {
         salesProductRequestProducer
                 .publishSalesProductRequest(
-                        new SalesProductRequest(id, productId));
+                        new SalesProductRequest(correlationId, id, productId));
     }
 
-    public void sendCustomerRequest(Long id, Long customerId) {
+    public void sendCustomerRequest(Long correlationId, Long id, Long customerId) {
         salesCustomerRequestProducer
                 .publishSalesCustomerRequest(
-                        new SalesCustomerRequest(id, customerId));
+                        new SalesCustomerRequest(correlationId, id, customerId));
     }
 
 }

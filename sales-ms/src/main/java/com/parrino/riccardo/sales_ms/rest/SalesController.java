@@ -24,8 +24,8 @@ public class SalesController {
 
     @PostMapping("")
     public Mono<String> createSale(@RequestBody CreateSalesDTO sale) {
-        salesService.sendProductRequest(1L, 2L);
-        salesService.sendCustomerRequest(1L, 2L);
+        salesService.sendProductRequest(1L, 1L, 2L);
+        salesService.sendCustomerRequest(1L, 1L, 2L);
         return Mono.just(new String("sales-ms createSales endpoint"));
     }
 
