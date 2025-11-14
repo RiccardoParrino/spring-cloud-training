@@ -38,8 +38,8 @@ public class ProductsController {
     }
 
     @DeleteMapping("{code}")
-    public Mono<String> deleteProductByCode(@PathVariable Long code) {
-        return Mono.just(new String("products-ms deleteProductByCode endpoint"));
+    public String deleteProductByCode(@PathVariable Long code) {
+        return new String("products-ms deleteProductByCode endpoint");
     }
 
 }
