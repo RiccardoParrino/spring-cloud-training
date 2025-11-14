@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: config-server
+    cloud:
+        config:
+            server:
+                git:
+                    uri: file:///C:/Users/ricky/repos/spring-cloud-config-repo/
+                    skipSslValidation: true
+server:
+    port: 8888
