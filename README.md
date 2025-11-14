@@ -1,5 +1,13 @@
 # Project to start working with Spring Cloud
 
-Architettura attuale:
+Architecture:
 
 ![architecture](architecture/ms-crm.png)
+
+Project Description:
+- Spring Cloud Netflix Eureka Server for service discovery
+- Spring Boot Microservices
+- Spring Cloud Gateway for api gateway
+- Spring Cloud Configuration Server for centralized configuration
+- WebClient for direct ms-to-ms communication
+- Apache Kafka for async messaging between ms
