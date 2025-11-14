@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: sales-ms
+    cloud:
+        function:
+            definition: salesCustomerResponse;salesProductResponse
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost:9092
+            bindings:
+                salesProductRequest-out-0:
+                    destination: sales-products-events
+                    content-type: application/json
+                salesProductResponse-in-0:
+                    destination: sales-products-response-events
+                    group: sales-products-response-group
+                salesCustomerRequest-out-0:
+                    destination: sales-customers-events
+                    content-type: application/json
+                salesCustomerResponse-in-0:
+                    destination: sales-customers-response-events
+                    group: sales-customers-response-group
+server:
+    port: 8081

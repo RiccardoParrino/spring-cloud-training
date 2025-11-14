@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: products-ms
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost:9092
+            bindings:
+                salesProductResponse-out-0:
+                    destination: sales-products-response-events
+                    group: sales-products-response-group
+                    content-type: application/json
+                salesProductRequest-in-0:
+                    destination: sales-products-events
+                    group: sales-products-service-group
+
+server:
+    port: 8082
