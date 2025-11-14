@@ -5,7 +5,7 @@ spring:
         config:
             server:
                 native:
-                    search-locations: src\main\resources
+                    search-locations: src/main/resources
     profiles:
         active: native
 
