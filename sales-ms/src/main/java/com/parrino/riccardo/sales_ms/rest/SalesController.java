@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.parrino.riccardo.sales_ms.dto.CreateSalesDTO;
 import com.parrino.riccardo.sales_ms.dto.UpdateSalesDTO;
-import com.parrino.riccardo.sales_ms.feign.ProductsFeignClient;
 import com.parrino.riccardo.sales_ms.service.SalesService;
+import com.parrino.riccardo.sales_ms.webClient.ProductsWebClient;
 
 import reactor.core.publisher.Mono;
 
@@ -26,7 +26,7 @@ public class SalesController {
     private SalesService salesService;
 
     @Autowired
-    private ProductsFeignClient productsFeignClient;
+    private ProductsWebClient productsWebClient;
 
     @Value("${message}")
     private String messageConfigFile;
@@ -65,7 +65,7 @@ public class SalesController {
 
     @GetMapping("/product-ms/findProduct/{code}")
     public Mono<String> findProductByCodeFromProductsMS(@PathVariable Long code) {
-        return Mono.just(productsFeignClient.findProductByCode(code));
+        return productsWebClient.findProductByCode(code);
     }
 
 }
