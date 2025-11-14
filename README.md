@@ -9,5 +9,5 @@ Project Description:
 - Spring Boot Microservices
 - Spring Cloud Gateway for api gateway
 - Spring Cloud Configuration Server for centralized configuration
-- WebClient for direct ms-to-ms communication
+- WebClient for direct ms-to-ms communication with CircuitBreaker
 - Apache Kafka for async messaging between ms
