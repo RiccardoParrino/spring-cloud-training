@@ -2,4 +2,4 @@
 
 Architettura attuale:
 
-![Alt text](architecture\ms-crm.png)
+![architecture](architecture/ms-crm.png)
