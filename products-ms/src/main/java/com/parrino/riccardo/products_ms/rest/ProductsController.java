@@ -2,7 +2,6 @@ package com.parrino.riccardo.products_ms.rest;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.oracle.svm.core.annotate.Delete;
 import com.parrino.riccardo.products_ms.dto.CreateProductDTO;
 import com.parrino.riccardo.products_ms.dto.UpdateProductDTO;
 
