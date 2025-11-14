@@ -64,8 +64,8 @@ public class SalesController {
     }
 
     @GetMapping("/product-ms/findProduct/{code}")
-    public String findProductByCodeFromProductsMS(@PathVariable Long code) {
-        return productsFeignClient.findProductByCode(code);
+    public Mono<String> findProductByCodeFromProductsMS(@PathVariable Long code) {
+        return Mono.just(productsFeignClient.findProductByCode(code));
     }
 
 }
