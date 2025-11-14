@@ -9,6 +9,7 @@ import com.parrino.riccardo.sales_ms.service.SalesService;
 import reactor.core.publisher.Mono;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -21,6 +22,9 @@ public class SalesController {
 
     @Autowired
     private SalesService salesService;
+
+    @Value("${message}")
+    private String messageConfigFile;
 
     @PostMapping("")
     public Mono<String> createSale(@RequestBody CreateSalesDTO sale) {
@@ -47,6 +51,11 @@ public class SalesController {
     @DeleteMapping("{salesCode}")
     public Mono<String> deleteSalesByCode(@PathVariable Long salesCode) {
         return Mono.just(new String("sales-ms deleteSalesById endpoint"));
+    }
+
+    @GetMapping("/props/msg")
+    public Mono<String> getPropsMsg() {
+        return Mono.just(this.messageConfigFile);
     }
 
 }

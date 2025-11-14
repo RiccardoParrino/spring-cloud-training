@@ -4,10 +4,8 @@ spring:
     cloud:
         config:
             server:
-                native:
-                    search-locations: src/main/resources
-    profiles:
-        active: native
-
+                git:
+                    uri: file:///C:/Users/ricky/repos/spring-cloud-config-repo/
+                    skipSslValidation: true
 server:
     port: 8888
